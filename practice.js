@@ -290,7 +290,7 @@ Your function should also be contained within a single line
 */
 
 // Code here
-
+let seven = () => 7;
 
 
 ////////// PROBLEM 14 //////////
@@ -318,8 +318,11 @@ function double(num) {
 */
 
 // Code here
+let add = (num1, num2) => num1 + num2;
 
+let subtract = (num1, num2) => num1 - num2;
 
+let double = num => num * 2;
 
 ////////// PROBLEM 15 //////////
 
@@ -331,7 +334,7 @@ You should not use the ES5 function declaration or function expression syntax in
 */
 
 // Code here
-
+let multiply = (num1, num2) => num1 * num2;
 
 
 ////////// PROBLEM 16 //////////
@@ -344,7 +347,7 @@ You should not use the ES5 function declaration or function expression syntax in
 */
 
 // Code here
-
+let concatenate = (str1, str2) => str1 + str2;
 
 
 ////////// PROBLEM 17 //////////
@@ -358,8 +361,9 @@ You should not use the ES5 function declaration or function expression syntax in
 */
 
 // Code here
-
-
+let gemInfo = (gemType, gemSize, gemWeight) => {
+    return { gemType, gemSize, gemWeight };
+}
 
 ////////// PROBLEM 18 //////////
 
@@ -384,7 +388,14 @@ let jobs = [
 
 
 // Code here
-
+let identifier = () => {
+    let filteredArr = jobs.filter((value, index, array) => {
+        if (value.programmer) {
+            return value;
+        }
+    })
+    return filteredArr[0]
+}
 
 
 ////////// PROBLEM 19 //////////
@@ -399,7 +410,14 @@ You should not use a for loop, but should use the filter method instead
 */
 
 // Code here
-
+let evens = arr => {
+    let filteredArr = arr.filter(value => {
+        if (value % 2 === 0) {
+            return value;
+        }
+    })
+    return filteredArr;
+}
 
 
 ////////// PROBLEM 20 //////////
@@ -416,7 +434,14 @@ You should not use a for loop, but should use the filter method instead
 */
 
 // Code here
-
+let startWithLetterA = arr => {
+    let filteredArr = arr.filter(value => {
+        if (value[0] === 'A' || value[0] === 'a') {
+            return value;
+        }
+    })
+    return filteredArr;
+}
 
 
 ////////// PROBLEM 21 //////////
@@ -430,6 +455,8 @@ Make sure to use arrow functions combined with the map method
 
 const formalGreeting = names => {
     // Code here
+    let mappedArr = names.map(value => `Hello, ${value}`);
+    return mappedArr;
 }
 
 
@@ -445,4 +472,6 @@ Make sure to use arrow functions combined with the reduce method
 
 const productOfArray = numbers => {
     // Code here
+    let product = numbers.reduce((accumulator, currentValue) => accumulator * currentValue);
+    return product;
 }
