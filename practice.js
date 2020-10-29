@@ -28,6 +28,7 @@ Inside this loop, change the value of each property to 0
 function objectLooper(number) {
     for (let key in number) {
         // Code here
+        number[key] = 0;
     }
     return number;
 };
@@ -51,7 +52,8 @@ If a value is greater than 3,000,000 set it to 0
 
 function stateLooper(obj) {
 	for (let key in obj) {
-		// Code here
+        // Code here
+        if(obj[key] > 3000000) obj[key] = 0;
 	}
 	return obj;
 };
@@ -67,6 +69,10 @@ Once all falsy values and their properties are removed, return the object
 
 function cleanUser(obj) {
     // Code here
+    for(let key in obj) {
+        if (!obj[key]) delete obj[key];
+    }
+    return obj;
 };
 
 
@@ -78,7 +84,10 @@ Return the updated user object
 */
 
 // Code here
-
+let maxedOut = userObj => {
+    for(let key in userObj) userObj[key] = 'max';
+    return userObj;
+}
 
 
 ////////// OBJECT DESTRUCTURING //////////
@@ -116,7 +125,7 @@ Destructure this object so that you have 3 distinct variables with values matchi
 */
 
 // Code here
-
+let { cats, dogs, mice } = animalCount;
 
 
 ////////// PROBLEM 6 //////////
@@ -136,7 +145,7 @@ Set the value of students to be 24, mentors to be 3, and instructors to be 5
 */
 
 // Code here
-
+let { students, mentors, instructors } = { students: 24, mentors: 3, instructors: 5 };
 
 
 ////////// PROBLEM 7 //////////
@@ -148,7 +157,13 @@ Use destructuring to assign the values of these properties to new variables
 */
 
 // Code here
+let languages = {
+    french: false,
+    english: true,
+    spanish: false
+}
 
+let { french, english, spanish } = languages;
 
 
 ////////// PROBLEM 8 //////////
@@ -183,7 +198,10 @@ Subtract num2 from num1 and return the result
 */
 
 // Code here
-
+let subtraction = nums => {
+    let { num1, num2 } = nums;
+    return num1 - num2;
+}
 
 
 ////////// PROBLEM 9 //////////
@@ -196,7 +214,10 @@ Using object destructuring, return the total sum of the counts of these animals
 */
 
 // Code here
-
+let zooAnimals = obj => {
+    let { lion, tiger, bear } = obj;
+    return lion + tiger + bear;
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -225,7 +246,9 @@ Title and name in this sentence should be replaced with the values of the destru
 */
 
 // Code here
-
+let greeting = ({ name, title }) => {
+    return `Hello, ${title} ${name}!`;
+}
 
 
 ////////// PROBLEM 11 //////////
@@ -238,7 +261,9 @@ Return the value that is truthy
 */
 
 // Code here
-
+let truthyFalsy = ({ number, string }) => {
+    return !number ? string : number;
+}
 
 
 ////////// PROBLEM 12 //////////
@@ -252,7 +277,7 @@ Your function should also be contained within a single line
 */
 
 // Code here
-
+let isGreaterThanTwenty = num => num > 20 ? true : false;
 
 
 ////////// PROBLEM 13 //////////
