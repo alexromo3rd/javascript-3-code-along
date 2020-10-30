@@ -389,11 +389,7 @@ let jobs = [
 
 // Code here
 let identifier = () => {
-    let filteredArr = jobs.filter((value, index, array) => {
-        if (value.programmer) {
-            return value;
-        }
-    })
+    let filteredArr = jobs.filter(job => job.programmer);
     return filteredArr[0]
 }
 
@@ -411,11 +407,7 @@ You should not use a for loop, but should use the filter method instead
 
 // Code here
 let evens = arr => {
-    let filteredArr = arr.filter(value => {
-        if (value % 2 === 0) {
-            return value;
-        }
-    })
+    let filteredArr = arr.filter(value => value % 2 === 0)
     return filteredArr;
 }
 
@@ -435,11 +427,7 @@ You should not use a for loop, but should use the filter method instead
 
 // Code here
 let startWithLetterA = arr => {
-    let filteredArr = arr.filter(value => {
-        if (value[0] === 'A' || value[0] === 'a') {
-            return value;
-        }
-    })
+    let filteredArr = arr.filter(value => value[0] === 'A' || value[0] === 'a')
     return filteredArr;
 }
 
@@ -455,8 +443,7 @@ Make sure to use arrow functions combined with the map method
 
 const formalGreeting = names => {
     // Code here
-    let mappedArr = names.map(value => `Hello, ${value}`);
-    return mappedArr;
+    return names.map(value => `Hello, ${value}`);
 }
 
 
@@ -472,6 +459,5 @@ Make sure to use arrow functions combined with the reduce method
 
 const productOfArray = numbers => {
     // Code here
-    let product = numbers.reduce((accumulator, currentValue) => accumulator * currentValue);
-    return product;
+    return numbers.reduce((accumulator, currentValue) => accumulator * currentValue);
 }
